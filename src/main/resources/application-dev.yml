@@ -1,3 +1,10 @@
 server:
   servlet:
     context-path: /elizabethcarrilho
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+data:s
+mongodb:
+uri: mongodb://localhost/test
