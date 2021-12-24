@@ -1,14 +1,11 @@
-package br.com.elizabethcarrilho.controller;
+package br.com.elizabethcarrilho.costumer.controller;
 
-import br.com.elizabethcarrilho.entity.Costumer;
-import br.com.elizabethcarrilho.service.CostumerService;
+import br.com.elizabethcarrilho.costumer.entity.Costumer;
+import br.com.elizabethcarrilho.costumer.service.CostumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
-
 @RestController
-@RequestMapping("/api/costumer")
 public class CostumerController {
 
     private final CostumerService costumerService;
@@ -18,8 +15,8 @@ public class CostumerController {
         this.costumerService = costumerService;
     }
 
-    @PostMapping
-    public Costumer create(@RequestBody @Valid Costumer costumer){
+    @PostMapping("/create")
+    public Costumer create(@RequestBody Costumer costumer){
         return costumerService.save(costumer);
     }
 }

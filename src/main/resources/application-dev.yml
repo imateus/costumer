@@ -1,6 +1,6 @@
 server:
   servlet:
-    context-path: /elizabethcarrilho
+    context-path: /api/costumer
 spring:
   autoconfigure:
     exclude:

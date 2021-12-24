@@ -1,7 +1,7 @@
-package br.com.elizabethcarrilho.service;
+package br.com.elizabethcarrilho.costumer.service;
 
-import br.com.elizabethcarrilho.entity.Costumer;
-import br.com.elizabethcarrilho.repository.CostumerRepository;
+import br.com.elizabethcarrilho.costumer.entity.Costumer;
+import br.com.elizabethcarrilho.costumer.repository.CostumerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
