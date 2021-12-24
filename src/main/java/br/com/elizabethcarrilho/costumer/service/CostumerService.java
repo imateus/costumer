@@ -9,13 +9,16 @@ import org.springframework.stereotype.Service;
 public class CostumerService {
 
     private final CostumerRepository costumerRepository;
+    private final SequenceGeneratorService sequenceGeneratorService;
 
     @Autowired
-    public CostumerService(CostumerRepository costumerRepository) {
+    public CostumerService(CostumerRepository costumerRepository, SequenceGeneratorService sequenceGeneratorService) {
         this.costumerRepository = costumerRepository;
+        this.sequenceGeneratorService = sequenceGeneratorService;
     }
 
     public Costumer save(Costumer costumer){
+        costumer.setId(sequenceGeneratorService.generateSequence(Costumer.SEQUENCE_NAME));
         return costumerRepository.save(costumer);
     }
 }
