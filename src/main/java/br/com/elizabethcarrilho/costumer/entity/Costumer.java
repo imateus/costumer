@@ -19,4 +19,6 @@ public class Costumer {
     protected String email;
     protected String phone;
     protected Address address;
+    @Transient
+    protected Error error;
 }
