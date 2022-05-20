@@ -5,6 +5,8 @@ import br.com.elizabethcarrilho.costumer.service.CostumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class CostumerController {
 
@@ -18,5 +20,10 @@ public class CostumerController {
     @PostMapping("/create")
     public Costumer create(@RequestBody Costumer costumer){
         return costumerService.save(costumer);
+    }
+
+    @GetMapping("/list")
+    public List<Costumer> list(){
+        return costumerService.findAll();
     }
 }

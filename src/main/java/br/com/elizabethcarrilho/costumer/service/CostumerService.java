@@ -8,7 +8,7 @@ import br.com.elizabethcarrilho.costumer.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.validation.ValidationException;
+import java.util.List;
 
 @Service
 public class CostumerService {
@@ -33,5 +33,9 @@ public class CostumerService {
             costumer.setError(new Error(Constant.ERROR_ID, Constant.ERROR_MSG_INVALID_CNPJ, null));
         }
         return true;
+    }
+
+    public List<Costumer> findAll(){
+        return costumerRepository.findAll();
     }
 }
